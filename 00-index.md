@@ -15,5 +15,5 @@ xAxis:
   label: 'x - axis'
   domain: [-6, 6]
 yAxis:
-  label: "y - axis"
+  label: 'y - axis'
 ```
