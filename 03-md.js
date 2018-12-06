@@ -105,7 +105,10 @@ const md = new Markdown({
 })
 md.use(ascii2mathml)
 md.use(functionPlot)
-md.use(anchor)
+md.use(anchor, {
+	permalink: true,
+	permalinkSymbol: '⚓',
+})
 md.use(emoji)
 md.use(toc)
 
