@@ -1,0 +1,21 @@
+{
+  "name": "maths",
+  "version": "0.0.1",
+  "author": "Ivan Trubach",
+  "private": true,
+  "dependencies": {
+    "ascii2mathml": "^0.6.0",
+    "babel-es6-node-modules": "0.0.1",
+    "d3": "^3.5.17",
+    "function-plot": "^1.18.1",
+    "handlebars": "^4.0.12",
+    "js-yaml": "^3.12.0",
+    "jsdom": "^13.0.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-toc-done-right": "^2.0.3",
+    "mathjax-node-page": "^3.0.1",
+    "sandboxed-module": "^2.0.3"
+  }
+}
