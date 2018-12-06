@@ -1,0 +1,70 @@
+:root
+{ font-size: 1.2rem
+; font-family: "Computer Modern Serif"
+; margin: 0 auto
+; width: 7in
+}
+table
+{ border-collapse: collapse
+; width: 100%
+}
+table th, table td
+{ max-width: 0
+; padding: 0.25em 0.5em
+; border-style: solid
+; border-width: thin
+}
+@media not print {
+main
+{ background-color: #fffeeb
+; padding: 2ex
+; border-radius: .1in
+; border-style: solid
+}
+} /* @media not print */
+.math svg
+{ max-width: 6in
+}
+.math.display
+{ text-align: center
+; display: block
+}
+.function-plot
+{ width: 100%
+; height: auto
+}
+.header-anchor
+{ visibility: hidden
+}
+:hover > .header-anchor
+{ visibility: visible
+}
+.author, .date
+{ margin: 0
+; padding: 0
+}
+a
+{ color: inherit
+}
+.navigation a:link
+{ text-decoration: none
+}
+.navigation a:hover
+{ text-decoration: underline
+}
+.navigation a:active
+{ text-decoration: underline
+}
+
+blockquote
+{ border-color: gray
+; padding-left: 0.75rem
+; margin: 0 0 1rem
+; border-left-style: solid
+}
+p
+{ text-align: justify
+; hyphens: auto
+; -webkit-hyphens: auto
+; -ms-hyphens: auto
+}
