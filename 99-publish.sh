@@ -1,9 +1,9 @@
-#!/bin/sh
-cp index.md 00-index.md
-cp metadata.yaml 01-metadata.yaml
-cp template.html 02-template.html
-cp main.css 03-main.css
-cp md.js 04-md.js
-cp build.js 96-build.js
-cp package.json 97-package.json
-cp package-lock.json 98-package-lock.json
+#!/bin/sh -e
+mv index.md 00-index.md
+mv metadata.yaml 01-metadata.yaml
+mv template.html 02-template.html
+mv main.css 03-main.css
+mv md.js 04-md.js
+mv build.js 96-build.js
+mv package.json 97-package.json
+mv package-lock.json 98-package-lock.json
