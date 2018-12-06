@@ -42,26 +42,29 @@ function ascii2mathml(md) {
 /* render function plots using function-plot */
 
 const YAML = require('js-yaml')
-const { JSDOM } = require("jsdom");
-const dom = new JSDOM()
-const { document } = dom.window
+const jsdom = require("jsdom")
+
+const dom = new jsdom.JSDOM()
 
 const sandbox = require('sandboxed-module')
 const sandboxConfig = {
 	globals: {
 		window: dom.window, // used by function-plot
-		document: document, // used by d3, function-plot uses window.document
+		document: dom.window.document, // used by d3, function-plot uses window.document
 		Element: dom.window.Element, // used by d3 and function-plot
 		CSSStyleDeclaration: dom.window.CSSStyleDeclaration, // used by d3
 	},
 }
+// function-plot uses window.d3 instead of global variable
 sandboxConfig.globals.window.d3 = sandbox.require('d3', sandboxConfig)
 const funcPlot = sandbox.require('function-plot', sandboxConfig)
 
 function renderPlot(code) {
 	const config = YAML.load(code)
+	const body = dom.window.document.body
+	body.innerHTML = ''
 	const chart = funcPlot({
-		target: document.body,
+		target: body,
 		...config,
 	})
 	const plot = chart.root.node()
@@ -73,7 +76,7 @@ function renderPlot(code) {
 	element.setAttribute('viewBox', `0 0 ${width} ${height}`)
 	element.removeAttribute('width')
 	element.removeAttribute('height')
-	return element.outerHTML
+	return body.innerHTML
 }
 
 function functionPlot(md) {
