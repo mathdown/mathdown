@@ -33,12 +33,20 @@ main
 { width: 100%
 ; height: auto
 }
-.header-anchor
+
+a.header-anchor
 { visibility: hidden
+; text-decoration: none
 }
-:hover > .header-anchor
+:hover > a.header-anchor
 { visibility: visible
 }
+@media print {
+a.header-anchor
+{ display: none
+}
+} /* @media print */
+
 .author, .date
 { margin: 0
 ; padding: 0

@@ -1,12 +1,19 @@
 {
+  "private": true,
   "name": "maths",
   "version": "0.0.1",
-  "author": "Ivan Trubach",
-  "private": true,
+  "license": "Unlicense",
+  "author": "Ivan Trubach <mr.trubach@icloud.com>",
+  "description": "Markdown to HTML on steroids",
+  "bin": "index.js",
+  "scripts": {
+    "build": "node index.js -input index.md -output index.html -metadata index.yaml -template template.htm"
+  },
   "dependencies": {
+    "arg": "^2.0.1",
     "ascii2mathml": "^0.6.0",
-    "babel-es6-node-modules": "0.0.1",
-    "d3": "^3.5.17",
+    "babel-es6-node-modules": "^0.0.1",
+    "d3-legacy": "npm:d3@3",
     "function-plot": "^1.18.1",
     "handlebars": "^4.0.12",
     "js-yaml": "^3.12.0",
@@ -15,7 +22,8 @@
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-toc-done-right": "^2.0.3",
-    "mathjax-node-page": "^3.0.1",
-    "sandboxed-module": "^2.0.3"
+    "ngraph.fromdot": "^0.3.0",
+    "sandboxed-module": "^2.0.3",
+    "vivagraphjs": "^0.10.1"
   }
 }

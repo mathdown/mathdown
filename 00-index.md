@@ -6,6 +6,8 @@ Random math notes and home assignments. Static web pages without client-side Jav
 y = x^2
 ```
 
+Rendering plots from Markdown is not a :rocket: science!
+
 ```function-plot
 width: 320
 height: 200
