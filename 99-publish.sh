@@ -4,7 +4,7 @@ mv main.yaml 15-main.yaml
 
 mv index.mjs 20-index.mjs
 mv template.htm 21-template.htm
-mv template.mjs 22-template.mjs
+mv subst.mjs 22-subst.mjs
 mv main.css 23-main.css
 mv main.js 24-main.js
 

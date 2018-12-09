@@ -24,13 +24,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-export function subst(string, data) {
-  var proxyRegEx = /\$\{([^\}]+)?\}/g
-  return string.replace(proxyRegEx, (_, key) => {
-    var keyParts = key.split('.')
-    var value = data
-    for (var i = 0; i < keyParts.length; i++) {
-      value = value[keyParts[i]]
+export default (text, data) => {
+  const proxyRegEx = /\$\{([^\}]+)?\}/g
+  return text.replace(proxyRegEx, (_, key) => {
+    const keyParts = key.split('.')
+    let value = data
+    for (const part of keyParts) {
+      value = value[part]
     }
     return value || ''
   })

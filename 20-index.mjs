@@ -1,15 +1,18 @@
 import fs from 'fs'
 import arg from 'arg'
 import yaml from 'js-yaml'
+import subst from './subst'
+
+import hl from 'microlight'
 import md from 'markdown-it'
-import mdEmoji from 'markdown-it-emoji'
-import mdGraph from './markdown-it-graph'
-import mdAnchor from 'markdown-it-anchor'
-import mdFunplot from './markdown-it-funplot'
-import mdGrammkit from './markdown-it-grammkit'
-import mdAscii2mathml from './markdown-it-ascii2mathml'
-import mdTocDoneRight from 'markdown-it-toc-done-right'
-import { subst } from './template'
+import emoji from 'markdown-it-emoji'
+import graph from './markdown-it-graph'
+import anchor from 'markdown-it-anchor'
+import funplot from './markdown-it-funplot'
+import grammkit from './markdown-it-grammkit'
+import deflist from 'markdown-it-deflist'
+import ascii2mathml from './markdown-it-ascii2mathml'
+import tableofcontents from 'markdown-it-toc-done-right'
 
 const readFile = (path) => fs.readFileSync(path, 'utf8')
 const openFile = (path) => fs.openSync(path, 'w')
@@ -31,23 +34,22 @@ const [
 	args['-template'],
 ]
 
-mdAnchor.defaults.permalink = true
+anchor.defaults.permalink = true
 
-import microlight from 'microlight'
+const config = {
+	typography: true,
+	highlight: (s) => hl(s),
+}
 
 fs.writeSync(output, subst(template, {
 	...yaml.load(metadata),
-	body: md({ highlight: (s) => microlight(s) })
-		.enable('escape', true)
-		.enable('html_blocks', true)
-		.enable('smartquotes')
-		.enable('replacements')
-		.use(mdEmoji)
-		.use(mdGraph)
-		.use(mdAnchor)
-		.use(mdFunplot)
-		.use(mdGrammkit)
-		.use(mdAscii2mathml)
-		.use(mdTocDoneRight)
+	body: md(config)
+		.use(emoji)
+		.use(graph)
+		.use(anchor)
+		.use(funplot)
+		.use(grammkit)
+		.use(ascii2mathml)
+		.use(tableofcontents)
 		.render(input),
 }))
