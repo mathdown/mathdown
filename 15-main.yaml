@@ -1,0 +1,7 @@
+lang: en
+pagetitle: maths
+header: >
+  <header>
+   <h1 class=title>Math Note</h1>
+   <p class=description>Static web pages without client-side JavaScript.</h2>
+  </header>

@@ -1,13 +1,21 @@
-#!/bin/sh -e
-mv 00-index.md index.md
-mv 01-index.yaml index.yaml
-mv 02-template.htm template.htm
-mv 03-main.css main.css
-mv 04-index.js index.js
-mv 05-funplot.js funplot.js
-mv 06-markdown-it-function-plot.js markdown-it-function-plot.js
-mv 07-markdown-it-ascii2mathml.js markdown-it-ascii2mathml.js
-mv 08-graph.js graph.js
-mv 96-yarnrc .yarnrc
-mv 97-package.json package.json
-mv 98-yarn.lock yarn.lock
+#!/bin/sh
+mv 10-main.md main.md
+mv 15-main.yaml main.yaml
+
+mv 20-index.mjs index.mjs
+mv 21-template.htm template.htm
+mv 22-template.mjs template.mjs
+mv 23-main.css main.css
+mv 24-main.js main.js
+
+mv 30-markdown-it-ascii2mathml.mjs markdown-it-ascii2mathml.mjs
+mv 35-markdown-it-funplot.mjs markdown-it-funplot.mjs
+mv 40-markdown-it-graph.mjs markdown-it-graph.mjs
+mv 45-markdown-it-grammkit.mjs markdown-it-grammkit.mjs
+mv 50-funplot.mjs funplot.mjs
+mv 55-graph.mjs graph.mjs
+
+mv 90-package.json package.json
+mv 95-package-lock.json package-lock.json
+
+mv 99-npmrc .npmrc
