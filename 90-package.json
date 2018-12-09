@@ -10,20 +10,20 @@
     "gen": "node index.mjs -input main.md -output main.html -metadata main.yaml -template template.htm"
   },
   "dependencies": {
-    "arg": "github:zeit/arg#2.0.1",
-    "ascii2mathml": "github:tie/ascii2mathml#v0.7.0",
-    "d3": "github:d3/d3#v3.5.17",
-    "function-plot": "github:tie/function-plot#v1.18.1",
-    "grammkit": "github:dundalek/GrammKit#v0.6.2",
-    "js-yaml": "github:nodeca/js-yaml#3.12.0",
-    "jsdom": "github:jsdom/jsdom#13.0.0",
-    "markdown-it": "github:markdown-it/markdown-it#8.4.2",
-    "markdown-it-anchor": "github:valeriangalliat/markdown-it-anchor#v5.0.2",
-    "markdown-it-emoji": "github:markdown-it/markdown-it-emoji#1.4.0",
-    "markdown-it-toc-done-right": "github:nagaozen/markdown-it-toc-done-right#6acfe328f211dd2811e93a87ae53de7eb045380b",
     "microlight": "github:tie/microlight#v0.1.0",
-    "ngraph.fromdot": "github:anvaka/ngraph.fromdot#v0.3.0",
-    "sandboxed-module": "github:felixge/node-sandboxed-module#v2.0.3",
-    "vivagraphjs": "github:anvaka/VivaGraphJS#v0.10.1"
+    "ascii2mathml": "github:tie/ascii2mathml#v0.7.0",
+    "function-plot": "github:tie/function-plot#v1.18.1",
+    "sandboxed-module": "^2.0.3",
+    "d3": "^3.5.17",
+    "arg": "^2.0.1",
+    "jsdom": "^13.0.0",
+    "js-yaml": "^3.12.0",
+    "grammkit": "^0.6.2",
+    "vivagraphjs": "^0.10.1",
+    "ngraph.fromdot": "^0.3.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-toc-done-right": "^2.0.3"
   }
 }
