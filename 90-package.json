@@ -10,7 +10,7 @@
     "gen": "node index.mjs -input main.md -output main.html -metadata main.yaml -template template.htm"
   },
   "dependencies": {
-    "microlight": "github:tie/microlight#v0.1.0",
+    "microlight": "github:tie/microlight#v0.2.0",
     "ascii2mathml": "github:tie/ascii2mathml#v0.7.0",
     "function-plot": "github:tie/function-plot#v1.18.1",
     "sandboxed-module": "^2.0.3",

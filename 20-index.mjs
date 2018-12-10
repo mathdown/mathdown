@@ -38,7 +38,7 @@ anchor.defaults.permalink = true
 
 const config = {
 	typography: true,
-	highlight: (s) => hl(s),
+	highlight: (s) => `<pre class=microlight><code>${hl(s)}</code></pre>`,
 }
 
 fs.writeSync(output, subst(template, {
