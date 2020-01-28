@@ -2,11 +2,12 @@ ${toc}
 
 # Building
 
-To build this project, run `99-install.sh` and `npm install --ignore-scripts`.
+To build this project, install Node.js 13 or greater and run `npm install --ignore-scripts`.
+Other versions are not supported but may work if `NODE_OPTIONS=--experimental-modules` environment variable is set.
 
 # Introduction
 
-Markdown on steroids (i.e. lots of server-side compile-time NodeJS dependencies).
+Markdown on steroids (i.e. lots of server-side compile-time Node.js dependencies).
 
 ```math
 f(x) = x^2
