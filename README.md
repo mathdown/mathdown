@@ -70,7 +70,7 @@ graph ethane {
 
 ## Highlighting
 
-Comes with the bleeding-edge technology for language-independent distraction-free syntax highlighting (smarter than AI).
+Comes with the bleeding-edge technology for language-independent distraction-free syntax highlighting.
 
 ```go
 package main

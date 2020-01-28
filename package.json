@@ -7,7 +7,7 @@
   "description": "Markdown to HTML on steroids",
   "bin": "index.mjs",
   "scripts": {
-    "gen": "node index.mjs -input main.md -output main.html -metadata main.yaml -template template.htm"
+    "gen": "node index.mjs -input README.md -output README.html -metadata metadata.yaml -template template.htm"
   },
   "dependencies": {
     "microlight": "github:tie/microlight#v0.2.1",
