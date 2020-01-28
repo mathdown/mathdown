@@ -1,4 +1,4 @@
-import ascii2mathml from 'ascii2mathml'
+import ascii2mathml from 'mathup'
 
 export default (md) => {
 	const [renderFence, renderCodeInline] = [

@@ -8,6 +8,7 @@ const context = {
 		document: dom.window.document, // used by d3, function-plot uses window.document
 		Element: dom.window.Element, // used by d3 and function-plot
 		CSSStyleDeclaration: dom.window.CSSStyleDeclaration, // used by d3
+		process: { browser: undefined }, // used by key-pressed (function-plot dependency)
 	},
 }
 // function-plot uses window.d3 instead of global variable

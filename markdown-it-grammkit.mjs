@@ -1,4 +1,4 @@
-import util from 'grammkit/lib/util'
+import util from 'grammkit/lib/util.js'
 
 function renderRailroad(grammar, format) {
 	let string = ''

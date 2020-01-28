@@ -1,17 +1,17 @@
 import fs from 'fs'
 import arg from 'arg'
 import yaml from 'js-yaml'
-import subst from './subst'
+import subst from './subst.mjs'
 
 import hl from 'microlight'
 import md from 'markdown-it'
 import emoji from 'markdown-it-emoji'
-import graph from './markdown-it-graph'
+import graph from './markdown-it-graph.mjs'
 import anchor from 'markdown-it-anchor'
-import funplot from './markdown-it-funplot'
-import grammkit from './markdown-it-grammkit'
+import funplot from './markdown-it-funplot.mjs'
+import grammkit from './markdown-it-grammkit.mjs'
 import deflist from 'markdown-it-deflist'
-import ascii2mathml from './markdown-it-ascii2mathml'
+import ascii2mathml from './markdown-it-ascii2mathml.mjs'
 import tableofcontents from 'markdown-it-toc-done-right'
 
 const readFile = (path) => fs.readFileSync(path, 'utf8')

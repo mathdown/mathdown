@@ -1,4 +1,4 @@
-import graph from './graph'
+import graph from './graph.mjs'
 
 function renderGraph(code) {
 	const element = graph.render(code)
