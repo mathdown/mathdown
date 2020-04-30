@@ -6,7 +6,7 @@
   "author": "Ivan Trubach <mr.trubach@icloud.com>",
   "bin": "mathdown.mjs",
   "scripts": {
-    "gen": "node index.mjs -input README.md -output README.html -metadata assets/metadata.yaml -template assets/template.htm"
+    "gen": "node mathdown.mjs -input README.md -output README.html -metadata assets/metadata.yaml -template assets/template.htm"
   },
   "engines": {
     "node": ">=12.0.0"
