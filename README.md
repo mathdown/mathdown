@@ -2,6 +2,20 @@ ${toc}
 
 # Building
 
+Since I don’t have npm registry account and the ecosystem sucks, we have to deal with it.
+
+Create a [new GitHub token](https://github.com/settings/tokens/new) with `read:packages` scope.
+Then execute the following commands, replacing `ACCESS_TOKEN` with your token.
+
+```sh
+npm set '//npm.pkg.github.com/:_authToken' 'ACCESS_TOKEN'
+npm set registry 'https://npm.pkg.github.com/mathdown'
+```
+
+[GitHub documentation](https://help.github.com/en/actions/language-and-framework-guides/publishing-nodejs-packages#publishing-packages-to-github-packages) also recommends running `npm set always-auth true`.
+
+If you find colors annoying, run `npm set color false`. This step is optional.
+
 To build this project, install Node.js 13 or greater and run `npm install --ignore-scripts`.
 Other versions are not supported but may work if `NODE_OPTIONS=--experimental-modules` environment variable is set.
 
@@ -13,13 +27,13 @@ Markdown on steroids (i.e. lots of server-side compile-time Node.js dependencies
 f(x) = x^2
 ```
 
-It's beautiful!
+It’s beautiful!
 
 ```math
-bb`E`[X] = int_(-oo)^oo x f(x)  dx
+bb`E`[X] = int_(-oo)^oo x f(x) dx
 ```
 
-We don't need no education.
+We don’t need no education.
 
 ```math
 [λ_0, λ_1, ...;]
@@ -71,7 +85,7 @@ graph ethane {
 
 ## Highlighting
 
-Comes with the bleeding-edge technology for language-independent distraction-free syntax highlighting.
+MathDown performs language-agnostic distraction-free syntax highlighting.
 
 ```go
 package main

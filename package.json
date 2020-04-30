@@ -1,34 +1,32 @@
 {
-  "type": "module",
-  "private": true,
-  "name": "mathdown",
-  "version": "0.0.1",
+  "name": "@mathdown/mathdown",
+  "version": "0.1.0",
   "license": "Unlicense",
-  "author": "Ivan Trubach <mr.trubach@icloud.com>",
   "description": "Markdown to HTML on steroids",
-  "bin": "index.mjs",
+  "author": "Ivan Trubach <mr.trubach@icloud.com>",
+  "bin": "mathdown.mjs",
   "scripts": {
-    "gen": "node index.mjs -input README.md -output README.html -metadata metadata.yaml -template template.htm"
+    "gen": "node index.mjs -input README.md -output README.html -metadata assets/metadata.yaml -template assets/template.htm"
   },
   "engines": {
-    "node": ">=13.0.0"
+    "node": ">=12.0.0"
   },
   "dependencies": {
+    "@mathdown/microlight": "^0.3.0",
     "arg": "^2.0.1",
     "d3": "^3.5.17",
     "function-plot": "^1.19.1",
     "grammkit": "^0.7.1",
     "js-yaml": "^3.13.1",
-    "jsdom": "^16.0.1",
+    "jsdom": "^16.2.2",
     "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-anchor": "^5.2.7",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-toc-done-right": "^4.1.0",
-    "mathup": "^1.0.0-alpha.3",
-    "microlight": "github:tie/microlight#v0.2.1",
-    "ngraph.fromdot": "^5.0.0",
-    "sandboxed-module": "^2.0.3",
+    "mathup": "^1.0.0-beta.1",
+    "ngraph.fromdot": "^6.0.0",
+    "sandboxed-module": "^2.0.4",
     "vivagraphjs": "^0.12.0"
   }
 }

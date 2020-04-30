@@ -1,9 +1,11 @@
+#!/usr/bin/env node
+
 import fs from 'fs'
 import arg from 'arg'
 import yaml from 'js-yaml'
 import subst from './subst.mjs'
 
-import hl from 'microlight'
+import hl from '@mathdown/microlight'
 import md from 'markdown-it'
 import emoji from 'markdown-it-emoji'
 import graph from './markdown-it-graph.mjs'
