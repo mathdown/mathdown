@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import './sandbox-patch.mjs'
+
 import fs from 'fs'
 import arg from 'arg'
 import yaml from 'js-yaml'
