@@ -5,7 +5,7 @@ import './sandbox-patch.mjs'
 import fs from 'fs'
 import arg from 'arg'
 import yaml from 'js-yaml'
-import subst from './subst.mjs'
+import handlebars from 'handlebars'
 
 import hl from '@mathdown/microlight'
 import md from 'markdown-it'
@@ -30,7 +30,7 @@ const [
 	input = readFile(0), // stdin
 	output = 1, // stdout
 	metadata = '',
-	template = '${body}',
+	template = '<doctype html>{{{body}}}',
 ] = [
 	args['-input'],
 	args['-output'],
@@ -45,7 +45,8 @@ const config = {
 	highlight: (s) => `<pre class=microlight><code>${hl(s)}</code></pre>`,
 }
 
-fs.writeSync(output, subst(template, {
+const subst = handlebars.compile(template)
+fs.writeSync(output, subst({
 	...yaml.load(metadata),
 	body: md(config)
 		.use(emoji)

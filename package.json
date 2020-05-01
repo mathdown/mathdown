@@ -1,6 +1,6 @@
 {
   "name": "@mathdown/mathdown",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "Unlicense",
   "description": "Markdown to HTML on steroids",
   "author": "Ivan Trubach <mr.trubach@icloud.com>",
@@ -17,6 +17,7 @@
     "d3": "^3.5.17",
     "function-plot": "^1.19.1",
     "grammkit": "^0.7.1",
+    "handlebars": "^4.7.6",
     "js-yaml": "^3.13.1",
     "jsdom": "^16.2.2",
     "markdown-it": "^10.0.0",
