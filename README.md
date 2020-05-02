@@ -51,6 +51,7 @@ width: 320
 height: 200
 data:
 - fn: 'x^2'
+  graphType: 'polyline'
 xAxis:
   label: 'x - axis'
   domain: [-6, 6]
