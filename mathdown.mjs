@@ -6,6 +6,7 @@ import fs from 'fs'
 import arg from 'arg'
 import yaml from 'js-yaml'
 import handlebars from 'handlebars'
+import version from 'project-version'
 
 import hl from '@mathdown/microlight'
 import md from 'markdown-it'
@@ -47,6 +48,7 @@ const config = {
 
 const subst = handlebars.compile(template)
 fs.writeSync(output, subst({
+	version: `v${version}`,
 	...yaml.load(metadata),
 	body: md(config)
 		.use(emoji)
