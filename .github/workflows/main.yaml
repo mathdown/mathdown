@@ -40,7 +40,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run tests
-        run: npm --silent run gen
+        run: npm --silent run test
         env:
           NODE_OPTIONS: '--experimental-modules'
           NODE_NO_WARNINGS: '1'

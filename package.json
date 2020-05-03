@@ -1,18 +1,19 @@
 {
   "name": "@mathdown/mathdown",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "license": "Unlicense",
   "description": "Markdown to HTML on steroids",
   "author": "Ivan Trubach <mr.trubach@icloud.com>",
-  "bin": "mathdown.mjs",
+  "bin": "bin/mathdown.mjs",
   "scripts": {
-    "gen": "node mathdown.mjs -input README.md -output README.html -metadata assets/metadata.yaml -template assets/template.htm"
+    "gen": "npx genversion -e lib/version.mjs",
+    "test": "node test/index.mjs"
   },
   "engines": {
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@mathdown/microlight": "^0.3.0",
+    "@mathdown/microlight": "^0.3.1",
     "arg": "^2.0.1",
     "d3": "^3.5.17",
     "function-plot": "^1.19.1",
@@ -27,7 +28,6 @@
     "markdown-it-toc-done-right": "^4.1.0",
     "mathup": "^1.0.0-beta.1",
     "ngraph.fromdot": "^6.0.0",
-    "project-version": "^1.2.0",
     "sandboxed-module": "^2.0.4",
     "vivagraphjs": "^0.12.0"
   }

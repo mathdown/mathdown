@@ -16,8 +16,14 @@ npm set registry 'https://npm.pkg.github.com/mathdown'
 
 If you find colors annoying, run `npm set color false`. This step is optional.
 
-To build this project, install Node.js 13 or greater and run `npm install --ignore-scripts`.
+To build this project, install Node.js 13 or greater and run `npm ci --ignore-scripts`.
 Other versions are not supported but may work if `NODE_OPTIONS=--experimental-modules` environment variable is set.
+
+To render this file using MathDown, run the command below:
+
+```sh
+node bin/mathdown.mjs -input README.md -output README.html -metadata assets/metadata.yaml -template assets/template.htm
+```
 
 # Introduction
 

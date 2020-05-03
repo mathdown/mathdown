@@ -1,23 +1,24 @@
 #!/usr/bin/env node
 
-import './sandbox-patch.mjs'
+import '../lib/sandbox-patch.mjs'
 
 import fs from 'fs'
 import arg from 'arg'
 import yaml from 'js-yaml'
 import handlebars from 'handlebars'
-import version from 'project-version'
 
 import hl from '@mathdown/microlight'
 import md from 'markdown-it'
 import emoji from 'markdown-it-emoji'
-import graph from './markdown-it-graph.mjs'
+import graph from '../lib/markdown-it-graph.mjs'
 import anchor from 'markdown-it-anchor'
-import funplot from './markdown-it-funplot.mjs'
-import grammkit from './markdown-it-grammkit.mjs'
+import funplot from '../lib/markdown-it-funplot.mjs'
+import grammkit from '../lib/markdown-it-grammkit.mjs'
 import deflist from 'markdown-it-deflist'
-import ascii2mathml from './markdown-it-ascii2mathml.mjs'
+import ascii2mathml from '../lib/markdown-it-ascii2mathml.mjs'
 import tableofcontents from 'markdown-it-toc-done-right'
+
+import { version } from '../lib/version.mjs'
 
 const readFile = (path) => fs.readFileSync(path, 'utf8')
 const openFile = (path) => fs.openSync(path, 'w')
