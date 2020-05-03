@@ -5,6 +5,7 @@
   "description": "Markdown to HTML on steroids",
   "author": "Ivan Trubach <mr.trubach@icloud.com>",
   "bin": "bin/mathdown.mjs",
+  "main": "lib/mathdown.mjs",
   "scripts": {
     "gen": "npx genversion -e lib/version.mjs",
     "test": "node test/index.mjs"
@@ -22,12 +23,15 @@
     "jsdom": "^16.2.2",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.7",
-    "markdown-it-deflist": "^2.0.3",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-toc-done-right": "^4.1.0",
     "mathup": "^1.0.0-beta.1",
     "ngraph.fromdot": "^6.0.0",
     "sandboxed-module": "^2.0.4",
     "vivagraphjs": "^0.12.0"
+  },
+  "devDependencies": {
+    "@mathdown/snapshot": "0.0.1",
+    "m.test": "0.0.58"
   }
 }

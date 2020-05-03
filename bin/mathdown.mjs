@@ -1,24 +1,11 @@
 #!/usr/bin/env node
 
-import '../lib/sandbox-patch.mjs'
-
 import fs from 'fs'
 import util from 'util'
 import yaml from 'js-yaml'
 import handlebars from 'handlebars'
 
-import hl from '@mathdown/microlight'
-import md from 'markdown-it'
-import emoji from 'markdown-it-emoji'
-import graph from '../lib/markdown-it-graph.mjs'
-import anchor from 'markdown-it-anchor'
-import funplot from '../lib/markdown-it-funplot.mjs'
-import grammkit from '../lib/markdown-it-grammkit.mjs'
-import deflist from 'markdown-it-deflist'
-import ascii2mathml from '../lib/markdown-it-ascii2mathml.mjs'
-import tableofcontents from 'markdown-it-toc-done-right'
-
-import { version } from '../lib/version.mjs'
+import mathdown from '../lib/mathdown.mjs'
 
 const flags = {
 	input: '',
@@ -103,23 +90,8 @@ if (flags.template != '') {
 }
 const template = handlebars.compile(templateText)
 
-const config = {
-	typography: true,
-	highlight: (s) => `<pre class=microlight><code>${hl(s)}</code></pre>`,
-}
-
-anchor.defaults.permalink = true
-
 fs.writeSync(output, template({
-	version: `v${version}`,
+	version: `v${mathdown.version}`,
 	...metadata,
-	body: md(config)
-		.use(emoji)
-		.use(graph)
-		.use(anchor)
-		.use(funplot)
-		.use(grammkit)
-		.use(ascii2mathml)
-		.use(tableofcontents)
-		.render(input),
+	body: mathdown.render(input),
 }))
