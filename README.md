@@ -16,6 +16,8 @@ npm set registry 'https://npm.pkg.github.com/mathdown'
 
 If you find colors annoying, run `npm set color false`. This step is optional.
 
+To disable Git commit and tag creating on [version bump](https://docs.npmjs.com/cli/version) run `npm set git-tag-version false`.
+
 To build this project, install Node.js 13 or greater and run `npm ci --ignore-scripts`.
 Other versions are not supported but may work if `NODE_OPTIONS=--experimental-modules` environment variable is set.
 

@@ -1,13 +1,13 @@
 {
   "name": "@mathdown/mathdown",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "Unlicense",
   "description": "Markdown to HTML on steroids",
   "author": "Ivan Trubach <mr.trubach@icloud.com>",
   "bin": "bin/mathdown.mjs",
   "main": "lib/mathdown.mjs",
   "scripts": {
-    "gen": "npx genversion -e lib/version.mjs",
+    "version": "npx genversion@2.2.1 -e lib/version.mjs",
     "test": "node test/index.mjs"
   },
   "engines": {
