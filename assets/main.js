@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 document.addEventListener("DOMContentLoaded", function() {
-  if(!empiricMathMLSupport() && !engineMathMLSupport()) {
+  if(!engineMathMLSupport() && !empiricMathMLSupport()) {
     loadMathJax()
   }
 })
@@ -39,6 +39,6 @@ function engineMathMLSupport() {
 function onClickRailroadDiagram(ev) {
   // if the node was clicked then go to rule definition
   if (ev.target.tagName === 'text') {
-    location.hash = ev.target.textContent;
+    location.hash = ev.target.textContent
   }
 }
