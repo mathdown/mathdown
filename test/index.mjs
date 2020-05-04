@@ -13,6 +13,7 @@ const dirname = path.dirname(url.fileURLToPath(import.meta.url))
 mtest.test('Snapshots', () => {
 	const snapshots = [
 		'funplot',
+		'graph',
 	]
 	for (const name of snapshots) {
 		mtest.test(name, () => {
