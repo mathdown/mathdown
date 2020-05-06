@@ -1,0 +1,95 @@
+plugins:
+- import
+extends:
+- eslint:all
+- plugin:import/errors
+- plugin:import/warnings
+env:
+  node: true
+  es2020: true
+parserOptions:
+  sourceType: module
+ignorePatterns:
+- /assets
+- /node_modules
+- /third_party
+rules:
+  # eslint
+  ## Possible errors
+  no-console: [error, { allow: [error] }]
+  ## Best practices
+  default-case: [off]
+  dot-location: [error, property]
+  no-case-declarations: [off]
+  no-magic-numbers: [off]
+  no-warning-comments: [warn]
+  ## Variables
+  no-shadow: [warn]
+  no-undefined: [off]
+  no-unused-vars: [error, { args: none }]
+  ## Stylistic issues
+  array-bracket-newline: [error, consistent]
+  array-bracket-spacing: [error, always, { singleValue: true, objectsInArrays: false, arraysInArrays: true }]
+  array-element-newline: [error, consistent]
+  camelcase: [off]
+  capitalized-comments: [off]
+  comma-dangle: [error, always-multiline]
+  func-names: [error, as-needed]
+  func-style: [error, declaration, { allowArrowFunctions: true }]
+  function-call-argument-newline: [error, consistent]
+  id-length: [off]
+  indent: [error, tab]
+  line-comment-position: [off]
+  max-len: [warn, { tabWidth: 8 }]
+  max-params: [warn]
+  max-statements: [warn]
+  multiline-comment-style: [warn, separate-lines]
+  no-inline-comments: [off]
+  no-plusplus: [off]
+  no-tabs: [error, { allowIndentationTabs: true }]
+  no-underscore-dangle: [off]
+  object-curly-spacing: [error, always]
+  one-var: [off]
+  padded-blocks: [error, never, { allowSingleLineBlocks: false }]
+  quote-props: [error, as-needed]
+  quotes: [error, single, { allowTemplateLiterals: true}]
+  semi: [error, never]
+  sort-keys: [off]
+  space-before-function-paren: [error, { anonymous: never, named: never }]
+  spaced-comment: [warn]
+  ## ECMAScript 6
+  prefer-destructuring: [off]
+  prefer-template: [off]
+  sort-imports: [off]
+  # eslint-plugin-import
+  ## Static analysis
+  import/no-unresolved: [error]
+  import/named: [error]
+  import/namespace: [error]
+  import/default: [error]
+  import/no-self-import: [error]
+  import/no-cycle: [error]
+  import/no-useless-path-segments: [error]
+  ## Helpful warnings
+  import/export: [error]
+  import/no-named-as-default: [error]
+  import/no-named-as-default-member: [error]
+  import/no-deprecated: [warn]
+  import/no-extraneous-dependencies: [error]
+  import/no-mutable-exports: [error]
+  import/no-unused-modules: [error]
+  ## Module systems
+  import/unambiguous: [error]
+  import/no-commonjs: [error, { allowConditionalRequire: false }]
+  import/no-amd: [error]
+  ## Style guide
+  import/first: [error]
+  import/exports-last: [error]
+  import/no-duplicates: [error]
+  import/no-namespace: [error]
+  import/extensions: [error, ignorePackages]
+  import/order: [error, { newlines-between: always, alphabetize: { order: asc } }]
+  import/newline-after-import: [error]
+  import/prefer-default-export: [error]
+  import/no-named-default: [error]
+  import/no-anonymous-default-export: [error, { allowArrowFunction: true, allowObject: true }]

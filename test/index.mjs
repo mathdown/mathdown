@@ -1,12 +1,11 @@
-import mathdown from '../lib/mathdown.mjs'
-
-import mtest from 'm.test'
-import snapshot from '@mathdown/snapshot'
-import { strict } from 'assert'
-
 import fs from 'fs'
 import path from 'path'
 import url from 'url'
+
+import snapshot from '@mathdown/snapshot'
+import mtest from 'm.test'
+
+import mathdown from '../lib/mathdown.mjs'
 
 const dirname = path.dirname(url.fileURLToPath(import.meta.url))
 

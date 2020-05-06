@@ -4,10 +4,14 @@
   "license": "Unlicense",
   "description": "Markdown to HTML on steroids",
   "author": "Ivan Trubach <mr.trubach@icloud.com>",
-  "bin": "bin/mathdown.mjs",
+  "bin": {
+    "mathdown": "bin/mathdown.mjs"
+  },
   "main": "lib/mathdown.mjs",
   "scripts": {
-    "version": "npx genversion@2.2.1 -e lib/version.mjs",
+    "lint": "npx eslint --ext=.mjs --quiet .",
+    "lint:warn": "npx eslint --ext=.mjs .",
+    "version": "node bin/genversion.mjs -i package.json -o lib/version.mjs",
     "test": "node test/index.mjs"
   },
   "engines": {

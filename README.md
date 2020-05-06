@@ -21,6 +21,8 @@ To disable Git commit and tag creating on [version bump](https://docs.npmjs.com/
 To build this project, install Node.js 13 or greater and run `npm ci --ignore-scripts`.
 Other versions are not supported but may work if `NODE_OPTIONS=--experimental-modules` environment variable is set.
 
+Linting the code requires some extra hacks until [eslint/eslint#13196](https://github.com/eslint/eslint/pull/13196) (support for ECMAScript 2020) and [benmosher/eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import/commit/6a110dd16a7fd775f08601054bf14ffd503eea7b) (support for eslint 7) are released. You can use [`setup-eslint.sh`](setup-eslint.sh) script to set up the required versions.
+
 To render this file using MathDown, run the command below:
 
 ```sh
