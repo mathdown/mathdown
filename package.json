@@ -29,7 +29,7 @@
     "markdown-it-anchor": "^5.2.7",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-toc-done-right": "^4.1.0",
-    "mathup": "^1.0.0-beta.1",
+    "mathup": "^1.0.0-beta.2",
     "ngraph.fromdot": "^6.0.0",
     "sandboxed-module": "^2.0.4",
     "vivagraphjs": "^0.12.0"
