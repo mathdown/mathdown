@@ -8,6 +8,19 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 document.addEventListener("DOMContentLoaded", function() {
+  var url = new URL(window.location.href)
+  var q = url.searchParams.get("mathjax")
+  switch (q) {
+  case '0':
+  case 'no':
+  case 'disable':
+    return
+  case '1':
+  case 'yes':
+  case 'force':
+    loadMathJax()
+    return
+  }
   if(!engineMathMLSupport() && !empiricMathMLSupport()) {
     loadMathJax()
   }

@@ -34,16 +34,17 @@ node bin/mathdown.mjs -input README.md -output README.html -metadata assets/meta
 
 Markdown on steroids (i.e. lots of server-side compile-time Node.js dependencies).
 
-```math
-f(x) = x^2
-```
-# MathML
+## MathML
+
+MathDown renders [mathup](https://runarberg.github.io/mathup) markup language as [MathML](https://w3.org/Math).
+
+Firefox and Safari support the standard out of the box, though the latter has some quirks, e.g. when rendering `$f(x)$` expression (nested `<mrow>`). Partial support for [MathML in Chromium](https://mathml.igalia.com) is available in the [latest build](https://download-chromium.appspot.com) and [Chrome Canary](https://tools.google.com/dlpage/chromesxs) with experimental web platform features enabled.
+
+[MathJax](https://mathjax.org) is loaded as a [fallback for browsers without MathML support](https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Fallback_for_Browsers_without_MathML_support). You may either force or disable this behavior by appending `?mathjax=force` or `?mathjax=disable` query to the file URL.
 
 ```math
 bb E [X] = int_(-oo)^oo x f(x)  dx
 ```
-
-MathDown renders [mathup](https://runarberg.github.io/mathup) markup language as [MathML](https://w3.org/Math). Firefox and Safari support the standard out of the box, though the latter has some quirks, e.g. when rendering `$f(x)$` expression (nested `<mrow>`). Partial support for [MathML in Chromium](https://mathml.igalia.com) is available in the [latest build](https://download-chromium.appspot.com) and [Chrome Canary](https://tools.google.com/dlpage/chromesxs) with experimental web platform features enabled. [MathJax](https://mathjax.org) is loaded as a [fallback for browsers without MathML support](https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Fallback_for_Browsers_without_MathML_support).
 
 ```math
 [λ_0, λ_1, ...;]
@@ -55,6 +56,10 @@ MathDown renders [mathup](https://runarberg.github.io/mathup) markup language as
 ## Function Plots
 
 Rendering plots from Markdown is not a :rocket: science!
+
+```math
+f(x) = x^2
+```
 
 ```function-plot
 width: 320
