@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import fs from 'fs'
+import os from 'os'
 import util from 'util'
 
 import handlebars from 'handlebars'
@@ -15,21 +16,73 @@ const flags = {
 	template: '',
 	args: [],
 }
-const argv = process.argv
+const argv = [ ...process.argv ]
 const argc = argv.length
 if (argc < 2) {
 	console.error('not enough arguments')
 	process.exit(1)
 }
 for (let i = 2; i < argc; i++) {
-	if (!argv[i].startsWith('-') || argv[i] === '--') {
+	const isUnixArg = argv[i].startsWith('-')
+	const isWindowsArg = argv[i].startsWith('/')
+	const isArgument = isUnixArg || isWindowsArg
+	if (!isArgument || argv[i] === '--') {
 		i++
 		flags.args = argv.slice(i)
 		break
 	}
+
+	// Find value separator (if any).
+	let j = -1
+	for (const c of argv[i]) {
+		j++
+		const isUnixSep = (c === '=')
+		const isWindowsSep = (c === ':')
+		const isSep = isUnixSep || isWindowsSep
+		if (!isSep) {
+			continue
+		}
+
+		// Expand argument so that we don’t have
+		// to care about separators later.
+
+		const arg = argv[i].substring(0, j)
+		const val = argv[i].substring(j + 1)
+
+		argv[i] = arg
+		argv.splice(i + 1, 0, val)
+
+		break
+	}
+
 	switch (argv[i]) {
+	case '-?':
+	case '-h':
+	case '-help':
+	case '--help':
+	case '/?':
+	case '/h':
+	case '/help':
+		// TODO write help message.
+		process.stdout.write(`mathdown${os.EOL}`)
+		process.stdout.write(``)
+		process.stdout.write(`TODO`)
+		break
+	case '-!':
+	case '-v':
+	case '-version':
+	case '--version':
+	case '/!':
+	case '/v':
+	case '/version':
+		process.stdout.write(`MathDown ${mathdown.version}${os.EOL}`)
+		process.exit(0)
+		break
 	case '-i':
 	case '-input':
+	case '--input':
+	case '/i':
+	case '/input':
 		i++
 		if (i >= argc) {
 			console.error('expected input file path')
@@ -39,6 +92,9 @@ for (let i = 2; i < argc; i++) {
 		break
 	case '-o':
 	case '-output':
+	case '--output':
+	case '/o':
+	case '/output':
 		i++
 		if (i >= argc) {
 			console.error('expected output file path')
@@ -46,7 +102,11 @@ for (let i = 2; i < argc; i++) {
 		}
 		flags.output = argv[i]
 		break
+	case '-m':
 	case '-metadata':
+	case '--metadata':
+	case '/m':
+	case '/metadata':
 		i++
 		if (i >= argc) {
 			console.error('expected metadata file path')
@@ -54,7 +114,11 @@ for (let i = 2; i < argc; i++) {
 		}
 		flags.metadata = argv[i]
 		break
+	case '-t':
 	case '-template':
+	case '--template':
+	case '/t':
+	case '/template':
 		i++
 		if (i >= argc) {
 			console.error('expected template file path')
