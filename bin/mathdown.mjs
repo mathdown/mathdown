@@ -151,7 +151,7 @@ if (flags.metadata !== '') {
 }
 const metadata = yaml.load(metadataText)
 
-let templateText = '<doctype html>{{{body}}}'
+let templateText = '<!doctype html>{{{body}}}'
 if (flags.template !== '') {
 	templateText = fs.readFileSync(flags.template, 'utf8')
 }
