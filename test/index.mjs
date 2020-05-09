@@ -13,6 +13,7 @@ mtest.test('Snapshots', () => {
 	const snapshots = [
 		'funplot',
 		'graph',
+		'math',
 	]
 	for (const name of snapshots) {
 		mtest.test(name, () => {

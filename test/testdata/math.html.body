@@ -1,0 +1,5 @@
+<h1 id="ascii-math">Ascii Math <a class="header-anchor" href="#ascii-math">¶</a></h1>
+<h2 id="sample-1">Sample 1 <a class="header-anchor" href="#sample-1">¶</a></h2>
+<p>Inline <span class="math inline"><math display="inline"><mrow><mi>f</mi><mrow><mo fence="true">(</mo><mi>x</mi><mo fence="true">)</mo></mrow></mrow></math></span> math</p>
+<h2 id="sample-2">Sample 2 <a class="header-anchor" href="#sample-2">¶</a></h2>
+<div class="math block"><math display="block"><mi mathvariant="double-struck">E</mi><mrow><mo fence="true">[</mo><mi>X</mi><mo fence="true">]</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>-</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mi>x</mi><mrow><mi>f</mi><mrow><mo fence="true">(</mo><mi>x</mi><mo fence="true">)</mo></mrow></mrow><mspace width="1ex" /><mrow><mi>d</mi><mi>x</mi></mrow><mspace depth="1em" /></math></div>
