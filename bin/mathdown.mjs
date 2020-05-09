@@ -36,8 +36,8 @@ for (let i = 2; i < argc; i++) {
 	let j = -1
 	for (const c of argv[i]) {
 		j++
-		const isUnixSep = (c === '=')
-		const isWindowsSep = (c === ':')
+		const isUnixSep = c === '='
+		const isWindowsSep = c === ':'
 		const isSep = isUnixSep || isWindowsSep
 		if (!isSep) {
 			continue
