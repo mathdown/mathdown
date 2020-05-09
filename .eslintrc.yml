@@ -44,6 +44,7 @@ rules:
   max-params: [warn]
   max-statements: [warn]
   multiline-comment-style: [warn, separate-lines]
+  no-continue: [off]
   no-inline-comments: [off]
   no-plusplus: [off]
   no-tabs: [error, { allowIndentationTabs: true }]
