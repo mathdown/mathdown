@@ -1,6 +1,8 @@
 ${toc}
 
-# Building
+# Usage
+
+This project requires Node.js 13 or greater. Node.js 12 is known to work if `NODE_OPTIONS=--experimental-modules` environment variable is set. Other versions are not supported.
 
 Since I don’t have npm registry account and the ecosystem sucks, we have to deal with it.
 
@@ -18,16 +20,17 @@ If you find colors annoying, run `npm set color false`. This step is optional.
 
 To disable Git commit and tag creating on [version bump](https://docs.npmjs.com/cli/version) run `npm set git-tag-version false`.
 
-To build this project, install Node.js 13 or greater and run `npm ci --ignore-scripts`.
-Other versions are not supported but may work if `NODE_OPTIONS=--experimental-modules` environment variable is set.
+Linting the code requires some extra hacks until [eslint/eslint#13196](https://github.com/eslint/eslint/pull/13196) (support for ECMAScript 2020) and [benmosher/eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import/commit/6a110dd16a7fd775f08601054bf14ffd503eea7b) (support for eslint 7) are released. You can use [`setup-eslint.sh`](setup-eslint.sh) script to set up the required versions. Running this script will also install project dependencies.
 
-Linting the code requires some extra hacks until [eslint/eslint#13196](https://github.com/eslint/eslint/pull/13196) (support for ECMAScript 2020) and [benmosher/eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import/commit/6a110dd16a7fd775f08601054bf14ffd503eea7b) (support for eslint 7) are released. You can use [`setup-eslint.sh`](setup-eslint.sh) script to set up the required versions.
+Otherwise, simply run `npm ci --ignore-scripts`.
 
-To render this file using MathDown, run the command below:
+Then, to render this file using MathDown, run the command below from the project root and open `README.html` in web browser.
 
 ```sh
 node bin/mathdown.mjs -input README.md -output README.html -metadata assets/metadata.yaml -template assets/template.htm
 ```
+
+MathDown renders math code as [MathML](https://w3.org/Math). Firefox and Safari support the standard out of the box, though the latter has some quirks with `$f(x)$` expression. Partial support for [MathML in Chromium](https://mathml.igalia.com) should be available in the [latest build](https://download-chromium.appspot.com) and [Chrome Canary](https://tools.google.com/dlpage/chromesxs) with experimental web platform features enabled. [MathJax](https://mathjax.org) is loaded as a [fallback for browsers without MathML support](https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Fallback_for_Browsers_without_MathML_support).
 
 # Introduction
 
