@@ -133,17 +133,17 @@ for (let i = 2; i < argc; i++) {
 	}
 }
 
-let inputFile = process.stdin.fd
+let inputFile = 0 // stdin
 if (flags.input !== '') {
 	inputFile = flags.input
 }
 const input = fs.readFileSync(inputFile, 'utf8')
 
-let outputFile = process.stdout.fd
+let outputFile = 1 // stdout
 if (flags.output !== '') {
-	outputFile = flags.output
+	outputFile = fs.openSync(flags.output, 'w')
 }
-const output = fs.openSync(outputFile, 'w')
+const output = outputFile
 
 let metadataText = ''
 if (flags.metadata !== '') {
