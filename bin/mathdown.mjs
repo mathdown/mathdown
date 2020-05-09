@@ -63,17 +63,25 @@ for (let i = 2; i < argc; i++) {
 	case '/?':
 	case '/h':
 	case '/help':
-		// TODO write help message.
-		process.stdout.write(`mathdown${os.EOL}`)
-		process.stdout.write(``)
-		process.stdout.write(`TODO`)
+		process.stdout.write('mathdown [flags] [--] [args]' + os.EOL)
+		process.stdout.write(os.EOL)
+		process.stdout.write('Flags:' + os.EOL)
+		process.stdout.write('\t' + '?|h|help         print help message' + os.EOL)
+		process.stdout.write('\t' + '!|V|version      print version string' + os.EOL)
+		process.stdout.write('\t' + 'i|input path     read from file at path' + os.EOL)
+		process.stdout.write('\t' + 'o|output path    write to file at path' + os.EOL)
+		process.stdout.write('\t' + 'm|metadata path  path to metadata file' + os.EOL)
+		process.stdout.write('\t' + 't|template path  path to template file' + os.EOL)
+		process.stdout.write(os.EOL)
+		process.stdout.write('Both UNIX-style (-h) or Windows-style (/h) flags are supported.' + os.EOL)
+		process.exit(0)
 		break
 	case '-!':
-	case '-v':
+	case '-V':
 	case '-version':
 	case '--version':
 	case '/!':
-	case '/v':
+	case '/V':
 	case '/version':
 		process.stdout.write(`MathDown ${mathdown.version}${os.EOL}`)
 		process.exit(0)
