@@ -22,7 +22,7 @@
     "d3": "^3.5.17",
     "function-plot": "^1.19.1",
     "grammkit": "^0.7.1",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "js-yaml": "^3.13.1",
     "jsdom": "^16.2.2",
     "markdown-it": "^10.0.0",
