@@ -24,7 +24,7 @@
     "grammkit": "^0.7.1",
     "handlebars": "^4.7.7",
     "js-yaml": "^3.13.1",
-    "jsdom": "^16.2.2",
+    "jsdom": "^16.5.0",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.7",
     "markdown-it-emoji": "^1.4.0",
